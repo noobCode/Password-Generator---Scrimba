@@ -39,15 +39,14 @@ function assign() {
 
 function copy() {
 
-    let copyText = querySelector(".b2")
-
-    // Select the text field
-    copyText.select()
-    copyText.setSelectionRange(0, 99999) // For mobile devices
-
-    // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText.value)
-
-    // Alert the copied text
-    alert("Copied the text: " + copyText.value);
+    // Get the specific button that was clicked
+    const clickedButton = event.target
+    const passwordText = clickedButton.textContent
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(passwordText)
+        .then(() => {
+            console.log(`Copied: ${passwordText}`)
+        })
+        .catch(err => console.error("Copy failed: ", err))
 }
