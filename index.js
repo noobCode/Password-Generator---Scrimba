@@ -66,8 +66,6 @@ function copy() {
         clickedButton.textContent = ""
         return
     }
-
-    
 }
 
 
