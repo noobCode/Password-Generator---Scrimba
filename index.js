@@ -44,16 +44,30 @@ function assign() {
 
 function copy() {
 
+
     // Get the specific button that was clicked
     const clickedButton = event.target
     const passwordText = clickedButton.textContent
+
+    if (passwordText !== "copied!" && passwordText !== "") {
+        // Copy to clipboard
+        navigator.clipboard.writeText(passwordText)
+            .then(() => {
+                console.log(`Copied: ${passwordText}`)
+            })
+            .catch(err => console.error("Copy failed: ", err))
+
+        // return copied msg
+        clickedButton.textContent = "copied!"
+        return
+
+    } else if (passwordText === "copied!" || passwordText === "") {
+        // reset
+        clickedButton.textContent = ""
+        return
+    }
+
     
-    // Copy to clipboard
-    navigator.clipboard.writeText(passwordText)
-        .then(() => {
-            console.log(`Copied: ${passwordText}`)
-        })
-        .catch(err => console.error("Copy failed: ", err))
 }
 
 
@@ -191,6 +205,14 @@ function switchMode() {
         modeBtn.textContent = "Light Mode"
         mode = modes[1]
     }
+
+}
+
+// add copied msg after click
+
+
+
+function copiedText() {
 
 }
 

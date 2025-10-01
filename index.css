@@ -76,6 +76,16 @@ body {
     
     margin-right: 10px;
     margin-left: 10px;
+
+}
+
+button {
+    box-shadow: 0 3.5px #999;
+}
+
+button:active {
+    box-shadow: 0 1px #666;
+    transform: translateY(2px);
 }
 
 .b2 {
@@ -137,6 +147,7 @@ body {
     width: 200px;
     margin-top: 39px;
     margin-right: 20px;
+    margin-left: -10px;
     padding: 10px;
     border: none;
     border-radius: 4px;
@@ -146,6 +157,7 @@ body {
     
     /* Automatically scale text to container width */
     font-size: min(16px, 200px / 10); /* Adjust divisor to control scaling */
+    box-shadow: 0 3px #999;
 }
 
 /* Dropdown content */
@@ -155,6 +167,7 @@ body {
   background-color: #f9f9f9;
   width: 220px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  margin-left: -10px;
 }
 
 /* Show the dropdown content on hover */
